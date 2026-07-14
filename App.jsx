@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useState } from "react"; 
 
 function App() {
-  const [name, setName] = useState("");
+
+  function handleSubmit (event) {
+    event.preventDefault(); 
+    alert("Form Submitted!");
+  };
 
   return (
-    <div>
-      <input placeholder="Enter Name" onChange={ (e) => setName(e.target.value)}/>
-      <h2>Hello {name}</h2>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input type="text" placeholder="Name" />
+      <button type="submit">Submit</button>
+    </form>
   );
 }
 
