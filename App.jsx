@@ -1,19 +1,16 @@
 import { useState } from "react"; 
 
 function App() {
-  const [name, setName] = useState("");
+  const isLogin = false;
 
   return (
     <div>
-      <h1>Greeting App</h1>
-      <input 
-        type="text" 
-        placeholder="Enter your name" 
-        onChange={(e) => setName(e.target.value)}
-      />
-      <h2>Hello {name}</h2>
+      {isLogin
+      ? <h1>Welcome Back</h1>
+      : <h1>Please Login</h1>
+      }
     </div>
-  );
-} 
+  )
+}
 
 export default App;
