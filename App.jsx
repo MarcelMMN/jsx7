@@ -1,30 +1,13 @@
 import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [liked, setLiked] = useState(false);
 
   return (
-    <div>
-
-      <h1>{count}</h1>
-
-      <button style={{padding: "10px", margin: "5px"}} onClick={ () => setCount(count + 1)}
-      >
-        Increase
-      </button>
-
-      <button style={{padding: "10px", margin: "5px"}} onClick={ () => setCount(count - 1)}
-      >
-        Decrease
-      </button>
-
-      <button style={{padding: "10px", margin: "5px"}} onClick={ () => setCount(0)}
-      >
-        Reset
-      </button>
-
-    </div>
+    <button onClick={() => setLiked(!liked)}>
+      {liked ? "Liked" : "Like"}
+    </button>
   );
 }
 
-export default App
+export default App;
