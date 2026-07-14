@@ -1,12 +1,13 @@
 import { useState } from "react";
 
 function App() {
-  const [liked, setLiked] = useState(false);
+  const [name, setName] = useState("");
 
   return (
-    <button onClick={() => setLiked(!liked)}>
-      {liked ? "Liked" : "Like"}
-    </button>
+    <div>
+      <input placeholder="Enter Name" onChange={ (e) => setName(e.target.value)}/>
+      <h2>Hello {name}</h2>
+    </div>
   );
 }
 
